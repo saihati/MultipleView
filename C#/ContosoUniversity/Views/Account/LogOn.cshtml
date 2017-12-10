@@ -1,0 +1,16 @@
+﻿@model ContosoUniversity.Models.User
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true, "Login failed. Check your login details.");
+    <div>
+        <fieldset>
+            <legend>Login</legend>
+           
+            <input type="submit" value="Log In" />
+        </fieldset>
+    </div>
+}

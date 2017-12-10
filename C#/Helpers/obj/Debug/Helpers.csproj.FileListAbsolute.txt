@@ -1,0 +1,6 @@
+M:\C#\Helpers\bin\Debug\Helpers.dll
+M:\C#\Helpers\bin\Debug\Helpers.pdb
+M:\C#\Helpers\obj\Debug\Helpers.dll
+M:\C#\Helpers\obj\Debug\Helpers.pdb
+M:\C#\Helpers\bin\Debug\System.Xml.dll
+M:\C#\Helpers\obj\Debug\Helpers.csprojResolveAssemblyReference.cache

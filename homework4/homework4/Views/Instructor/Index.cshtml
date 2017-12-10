@@ -1,0 +1,104 @@
+﻿@model IEnumerable<homework4.Models.Instructor>
+
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+@{
+    ViewBag.Title = "Instructors";
+}
+
+<h2>Students</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@using (Html.BeginForm("Index", "instructor", FormMethod.Get))
+{
+    <p>
+        Find by name: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+        <input type="submit" value="Search" />
+    </p>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.ActionLink("Last Name", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+            First Name
+        </th>
+        <th>
+            @Html.ActionLink("Experience", "Index", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th></th>
+    </tr>
+
+
+    </table>
+
+
+
+
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProposalName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Experience)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Innovation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dissmination)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Evaluation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Support)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.ProposalName)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Experience)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Innovation)
+            </td>
+
+            <td>
+                @Html.DisplayNameFor(model => model.Dissmination)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Evaluation)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Support)
+            </td>
+
+
+
+
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+</table>
+
+
+
+    <br />
